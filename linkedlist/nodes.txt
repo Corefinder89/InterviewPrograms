@@ -7,7 +7,7 @@ Nodes are the foundations on which various other data structures linked lists an
 Creation of Nodes
 The nodes are created by implementing a class which will hold the pointers along with the data element. In the below example we create a class named daynames to hold the name of the weekdays. The nextval pointer is initialized to null and three nodes and initialized with values as shown.
 
-The nextval pointer of node e1 poimts to e3 while the nextval pointer of node e3 points to e2.
+The nextval pointer of node e1 points to e3 while the nextval pointer of node e3 points to e2.
 
 
 class daynames:
@@ -21,7 +21,9 @@ e3 = daynames('Wed')
 
 e1.nextval = e3
 e3.nextval = e2
+
 Traversing the Node Elements
+
 We can traverse the elements of the node created above by creating a variable and assigning the first element to it. Then we use a while loop and nextval pointer to print out all the node elements. Note that we have one more additional data element and the nextval pointers are properly arranged to get the output as a days of a week in a proper sequence.
 
 
