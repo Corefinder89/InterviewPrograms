@@ -1,4 +1,4 @@
-# Push elements to stack
+# Stack Operations
 class Stack():
     def __init__(self):
         self.stack = []
