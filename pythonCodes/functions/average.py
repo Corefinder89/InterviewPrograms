@@ -1,6 +1,7 @@
 def generator(x,y):
-    i = range(x,y+1)
-    return i
+    while x<=y:
+        yield x
+        x+=1
 
 g = generator(5,10)
 
