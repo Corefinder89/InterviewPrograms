@@ -4,12 +4,22 @@ class BigONotations():
     def __init__(self, arraySize):
         self.arraySize = arraySize
 
-    def lin_search(self):
+    def lin_search(self, search_element):
         startTime = int(round(time.time()*1000))
         listSearch = self.generateNumbers()
-        for i in listSearch:
-            if (i==56789):
+        search_at = 0 #Starting search position
+        search_res = False #Default search result
+        pos = 0 #Initial position
+        while search_at < len(listSearch) and search_res is False:
+            if listSearch[search_at] == search_element:
+                search_res = pos
+                print("Element found at "+str(search_res))
                 break
+            else:
+                search_at = search_at + 1
+            pos = pos + 1
+        if search_res is False:
+            print("Element not found")
         endTime = int(round(time.time()*1000))
         lapsedTime = endTime - startTime
         print("The lapsed time is "+str(lapsedTime)+" milliseconds")
@@ -22,12 +32,12 @@ class BigONotations():
             print("Sample size exceeded population size")
         
 obj = BigONotations(100000)
-obj.lin_search()
+obj.lin_search(10000)
 obj = BigONotations(200000)
-obj.lin_search()
+obj.lin_search(20000)
 obj = BigONotations(300000)
-obj.lin_search()
+obj.lin_search(30000)
 obj = BigONotations(400000)
-obj.lin_search()
+obj.lin_search(40000)
 obj = BigONotations(500000)
-obj.lin_search()
+obj.lin_search(50000)
