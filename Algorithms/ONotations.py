@@ -8,7 +8,7 @@ class BigONotations():
         startTime = int(round(time.time()*1000))
         listSearch = self.generateNumbers()
         for i in listSearch:
-            if (i==500):
+            if (i==56789):
                 break
         endTime = int(round(time.time()*1000))
         lapsedTime = endTime - startTime
