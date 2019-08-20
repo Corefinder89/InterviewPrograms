@@ -1,6 +1,10 @@
+# Time complexity of linear search is O(n) as the execution time increases exponentially
+# with the number of inputs
+
 import random
 import time
-class BigONotations():
+
+class Linearsearchcomplexity():
     def __init__(self, arraySize):
         self.arraySize = arraySize
 
@@ -31,13 +35,13 @@ class BigONotations():
         except ValueError:
             print("Sample size exceeded population size")
         
-obj = BigONotations(100000)
+obj = Linearsearchcomplexity(100000)
 obj.lin_search(10000)
-obj = BigONotations(200000)
+obj = Linearsearchcomplexity(200000)
 obj.lin_search(20000)
-obj = BigONotations(300000)
+obj = Linearsearchcomplexity(300000)
 obj.lin_search(30000)
-obj = BigONotations(400000)
+obj = Linearsearchcomplexity(400000)
 obj.lin_search(40000)
-obj = BigONotations(500000)
+obj = Linearsearchcomplexity(500000)
 obj.lin_search(50000)
