@@ -12,7 +12,7 @@
 # log2n = klog22
 # log2n = k
 import time
-
+import random
 class Binarysearchcomplexity():
     def __init__(self, arraySize):
         self.arraySize = arraySize
