@@ -1,0 +1,94 @@
+100 Continue
+  When a client gets this status code, it means the server has received their request header
+  and has accepted the request, so the client can go ahead and send the request body.
+  This is most commonly used when a client wants to send content that is large.
+  It will send an Expect: 100 - continue to the server and when the server sends
+  back a response with status 100 continue, it proceeds to send the body.
+
+101 Switching Protocols
+  A client can send a request to the server to switch the communication protocol
+  using the Upgrade header. This can be say switching from HTTP/1.1 to HTTP/2
+  or switching to WebSocket. The server will response with a response code 101
+  and an Upgrade response header with information on the protocol it upgraded to.
+
+200 Ok
+This response status code indicates that our request was successful. This is used
+mostly when we request for data from the server and it responds with the data.
+When you visit the link to a webpage, the browser sends a request to the server
+to give it the contents of that webpage.
+
+The server will respond with a status 200 ok and a header specifying the type
+of content returned (text/html, multimedia, etc) and a body
+containing the content itself.
+
+201 Created
+  This is the response code the client gets after sending resource (data) to the server.
+  This resource is stored by the server and upon successfully storing it,
+  the 201 Created response code is returned with the newly created resource as
+  the request body. It can be form submissions, file uploads or other related
+  activities.
+
+202 Accepted
+  This is not a very common response code sent by servers. It is used in cases
+  where a request by the client has been received but the server has sent it in
+  for processing. It is a non-committal response in that when the server
+  eventually comes around to process the request, it may or may not act upon
+  it based on if the client has the right to make that request or if the server
+  has the means to handle it. Also, it means the server will not be sending any
+  response afterwards.
+
+  This can be used in cases when a request is transferred to another server or
+  when a request is batched to be proceed at another time. In such a scenario,
+  the server ought to return an indicator of the current status of the request
+  and a way for the client to monitor the processing of the request.
+
+203 Non authoritive information
+  This is also not a very common response code. It signifies that the response
+  the client is getting is not exactly as it was when sent by the server.
+  It can mean that the response has been modified as it passed through a
+  proxy tunnel or some other related third party.
+
+  The data eventually returned might be a subset or superset of the data
+  returned from the server.
+
+204 No Content
+  This response code tells the client (in the case of a user agent) not to change
+  the current document presented to the user. Header information might be updated,
+  but no new content will be sent along.
+
+  This response can be sent after a client makes a request updating a
+  resources on the server and the server does not need to return any
+  data since nothing new was created. The server must never return a response
+  body when it sends a 204 - No Content status code.
+
+205 Reset Content
+  This response status tells the client to refresh the document sample.
+
+206 partial Content
+  This response code indicates that the request has succeeded and the response
+  body has the requested ranges of data. The server only sends ranges of data
+  when the client sets the Range header in it’s request. Bear in mind that the
+  client must never request a range if it cannot handle the range.
+
+  If there is only one range, the Content-Type of the whole response is
+  set to the type of the document, and a Content-Range is provided. If several
+  ranges are sent back, the Content-Type is set to multipart/byteranges and each
+  fragment cover one range, with Content-Range and Content-Type describing it.
+
+  When a range is requested by the client, the server returns 206 Parital Content
+  and never returns a 200 Ok. Medias like large videos and images are good
+  examples of data return as a range.
+
+301 Moved Permanently
+  This tells the client that the resource they seek has been moved permanently,
+  and then presents the URL to the new location of the resource. This does two
+  things: tells the client where to find the resource and also helps the client
+  know where to go the next time they need the resource. The new location for
+   the resource is specified by the Location header.
+
+302 Found
+  It is used for temporary redirect. Client browsers will redirect to the
+  specified resource but indexing systems like search engines will not change
+  their reference to the resource as the redirect is only temporary. And like 301,
+  client browsers might change the body/method of the request, so when you want
+  to temporarily redirect a POST, use 307 instead.
